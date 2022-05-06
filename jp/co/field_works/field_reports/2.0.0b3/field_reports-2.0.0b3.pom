@@ -39,7 +39,7 @@
     <repository>
       <id>internal.repo</id>
       <name>Temporary Staging Repository</name>
-      <url>file://${project.build.directory}/repo</url>
+      <url>file://${project.basedir}/../repo</url>
     </repository>
   </distributionManagement>
 </project>
