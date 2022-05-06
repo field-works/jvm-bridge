@@ -16,7 +16,7 @@ JVM Bridge APIを通じて，Field Reportsの各機能を呼び出すことが�
 
 本モジュールのソースコードは，BSDライセンスのオープンソースとします。
 
-  - https://github.com/field-works/jvm-bridge/
+    https://github.com/field-works/jvm-bridge/
 
 以下のような場合，自由に改変／再配布していただいて結構です。
 
@@ -37,7 +37,7 @@ JVM Bridge APIを通じて，Field Reportsの各機能を呼び出すことが�
 
 本モジュールのご利用に際しては，Field Reports本体がインストール済みである必要があります。
 
-  - https://www.field-works.co.jp/製品情報/
+    https://www.field-works.co.jp/製品情報/
 
 Field Reports本体のインストール手順につきましては，
 ユーザーズ・マニュアルを参照してください。
