@@ -1,5 +1,5 @@
-JVM Bridge 2.0
-============================
+JVM Bridge 2.0.0
+================
 
 Field Reports JVM (Java Virtual Machine) Bridge（以降，本モジュールと表記します）は，
 PDF帳票ツールField ReportsをJVM言語から利用するためのライブラリです。
