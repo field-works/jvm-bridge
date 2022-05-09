@@ -41,7 +41,15 @@ https://www.field-works.co.jp/製品情報/
 * Java SE 8以上
 
 ## インストール
-### Mavenによるインストール
+### jarファイルによるインストール
+
+インストール媒体より，jarファイルを所定の格納場所にコピーしてください。
+
+    field_reports-x.x.x.jar
+
+jarファイルの格納場所は，環境変数'CLASSPATH'または実行時引数'-classpath'で指定してください。
+
+### Mavenプロジェクトからの利用
 
 Mavenから参照可能なインストールモジュールをGitHubで配布しています。
 
@@ -71,58 +79,45 @@ Mavenから参照可能なインストールモジュールをGitHubで配布し
 </project>
 ```
 
-### jarファイルによるインストール
-
-インストール媒体より，jarファイルを所定の格納場所にコピーしてください。
-
-    field_reports-x.x.x.jar
-
-jarファイルの格納場所は，環境変数'CLASSPATH'または実行時引数'-classpath'で指定してください。
-
 ### 動作確認
-#### コマンド連携時
+### コマンド連携時
 
-本モジュールのソースコードを展開して，以下のコマンドを実行してください。
+以下のコマンドを実行してください。
 
-```shell
-$ mvn test
+```
+$ jshell --class-path {jarファイル格納場所}/field_reports-2.0.0.jar
+jshell> import jp.co.field_works.field_reports.*
+jshell> jp.co.field_works.field_reports.Proxy reports = Bridge.createProxy("exec:/usr/local/bin/reports")
+jshell> reports.version()
+$3 ==> "2.0.0rc3"
+jshell> reports.render("{}")
+$4 ==> byte[672] { 37, 80, 68, 70, 45, 49,...
 ```
 
-reportsコマンドにパスが通っていない場合は，環境変数'REPORTS_PROXY'でコマンドのパスを指定してください
-（動作環境に応じて，パスは変更してください）。
+* 動作環境に応じて，create_proxy()に与えるパスを適宜変更してください。  
+  （Windowsでは，"exec:C:/Program Files/Field Works/Field Reports x.x/bin/reports.exe"など）
 
-LinuxまたはmacOSでの実行例：
-```shell
-$ REPORTS_PROXY=exec:/usr/local/bin/reports mvn test
-```
-
-Windowsでの実行例：
-```cmd
-> set REPORTS_PROXY="C:\Program Files\Field Works\Field Reports 2.0\reports.exe"
-> mvn test
-```
-
-#### HTTP連携時
+### HTTP通携時
 
 Field Reportsをサーバーモードで起動してください。
 
-```shell
-$ reports server -l4
+```
+$ reports server -l3
 ```
 
-本モジュールのソースコードを展開して，以下のコマンドを実行してください
-（動作環境に応じて，URLは変更してください）。
+次に，以下のコマンドを実行してください
 
-LinuxまたはmacOSでの実行例：
-```shell
-$ REPORTS_PROXY=http://localhost:50080/ mvn test
+```
+$ jshell --class-path {jarファイル格納場所}/field_reports-2.0.0.jar
+jshell> import jp.co.field_works.field_reports.*
+jshell> jp.co.field_works.field_reports.Proxy reports = Bridge.createProxy("http://localhost:50080/")
+jshell> reports.version()
+$3 ==> "2.0.0rc3"
+jshell> reports.render("{}")
+$4 ==> byte[672] { 37, 80, 68, 70, 45, 49,...
 ```
 
-Windowsでの実行例：
-```shell
-> set REPORTS_PROXY=http://localhost:50080/
-> mvn test
-```
+* 動作環境に応じて，create_proxy()に与えるURLを適宜変更してください。  
 
 ## API使用例
 
