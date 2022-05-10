@@ -44,7 +44,7 @@ public final class Bridge
             uri = "exec:reports";
 
         if (uri.startsWith("exec:")) {
-            String[] uris = uri.split(":")[1].split("\\?");
+            String[] uris = uri.substring(5).split("\\?");
             if (uris.length == 2) {
                 Map<String, String> q = splitQuery(uris[1]);
                 String cwd = q.containsKey("cwd") ? q.get("cwd") : ".";
