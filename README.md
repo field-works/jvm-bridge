@@ -85,7 +85,7 @@ Mavenから参照可能なインストールモジュールをGitHubで配布し
 以下のコマンドを実行してください。
 
 ```
-$ jshell --class-path {jarファイル格納場所}/field_reports-2.0.0.jar
+$ jshell --class-path <jarファイル格納場所>/field_reports-2.0.0.jar
 jshell> import jp.co.field_works.field_reports.*
 jshell> jp.co.field_works.field_reports.Proxy reports = Bridge.createProxy("exec:/usr/local/bin/reports")
 jshell> reports.version()
@@ -108,7 +108,7 @@ $ reports server -l3
 次に，以下のコマンドを実行してください
 
 ```
-$ jshell --class-path {jarファイル格納場所}/field_reports-2.0.0.jar
+$ jshell --class-path <jarファイル格納場所>/field_reports-2.0.0.jar
 jshell> import jp.co.field_works.field_reports.*
 jshell> jp.co.field_works.field_reports.Proxy reports = Bridge.createProxy("http://localhost:50080/")
 jshell> reports.version()
