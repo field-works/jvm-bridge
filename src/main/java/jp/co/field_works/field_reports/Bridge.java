@@ -20,8 +20,8 @@ public final class Bridge
      *      Proxy reports = Bridge.createProxy("http://localhost:50080/");
      * 
      * @param uri Field Reportsとの接続方法を示すURI
-     * <p>uriがnullの場合，環境変数'REPORTS_PROXY'からURIを取得します。
-     * 環境変数'REPORTS_PROXY'も未設定の場合のURIは，"exec:reports"とします。</p>
+     * <p>uriがnullの場合，環境変数'REPORTS_PROXY'からURIを取得します。</br>
+     * 環境変数'REPORTS_PROXY'も未設定の場合既定値は"exec:reports"です。</p>
      * 
      *  URI書式（コマンド連携時）:
      * 
