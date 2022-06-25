@@ -62,7 +62,7 @@ Mavenから参照可能なインストールモジュールをGitHubで配布し
 
   <dependencies>
     <dependency>
-        <groupId>jp.co.field_works.field_reports</groupId>
+        <groupId>jp.co.field_works</groupId>
         <artifactId>field_reports</artifactId>
         <version>2.0.0</version>
     </dependency>
@@ -72,7 +72,7 @@ Mavenから参照可能なインストールモジュールをGitHubで配布し
     <repository>
       <id>field_works</id>
       <name>Field Works, LLC repository</name>
-      <url>https://raw.githubusercontent.com/field_works/jvm-bridge/repo/</url>
+      <url>https://raw.githubusercontent.com/field-works/jvm-bridge/repo/</url>
     </repository>
   </repositories>
 
