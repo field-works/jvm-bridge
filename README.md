@@ -56,10 +56,6 @@ Mavenから参照可能なインストールモジュールをGitHubで配布し
 プロジェクトから利用する際には，`pos.xml`ファイルに下記の記述を追加してください。
 
 ```xml:pom.xml
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
   <dependencies>
     <dependency>
         <groupId>jp.co.field_works</groupId>
@@ -70,13 +66,11 @@ Mavenから参照可能なインストールモジュールをGitHubで配布し
 
   <repositories>
     <repository>
-      <id>field_works</id>
-      <name>Field Works, LLC repository</name>
+      <id>github</id>
       <url>https://raw.githubusercontent.com/field-works/jvm-bridge/repo/</url>
     </repository>
   </repositories>
 
-</project>
 ```
 
 ### 動作確認
