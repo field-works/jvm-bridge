@@ -83,7 +83,7 @@ $ jshell --class-path <jarファイル格納場所>/field_reports-2.0.0.jar
 jshell> import jp.co.field_works.field_reports.*
 jshell> jp.co.field_works.field_reports.Proxy reports = Bridge.createProxy("exec:/usr/local/bin/reports")
 jshell> reports.version()
-$3 ==> "2.0.0b3"
+$3 ==> "2.0.0rc4"
 jshell> reports.render("{}")
 $4 ==> byte[672] { 37, 80, 68, 70, 45, 49,...
 ```
@@ -106,7 +106,7 @@ $ jshell --class-path <jarファイル格納場所>/field_reports-2.0.0.jar
 jshell> import jp.co.field_works.field_reports.*
 jshell> jp.co.field_works.field_reports.Proxy reports = Bridge.createProxy("http://localhost:50080/")
 jshell> reports.version()
-$3 ==> "2.0.0b3"
+$3 ==> "2.0.0rc4"
 jshell> reports.render("{}")
 $4 ==> byte[672] { 37, 80, 68, 70, 45, 49,...
 ```
