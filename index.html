@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Field Reports JVM Bridge: JVM Bridge 2.0.0</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Field Reports JVM Bridge
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">JVM Bridge 2.0.0 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Field Reports JVM (Java Virtual Machine) Bridge（以降，本モジュールと表記します）は， PDF帳票ツールField ReportsをJVM言語から利用するためのライブラリです。</p>
+<p>JVM Bridge APIを通じて，Field Reportsの各機能を呼び出すことができます。</p>
+<ul>
+<li>Field Reportsのバージョンを取得する。</li>
+<li>レンダリング・パラメータを元にPDFを生成し，結果をバイナリ文字列として受け取る。</li>
+<li>PDFデータを解析し，フィールドや注釈の情報を取得する。</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md0"></a>
+必要条件</h1>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Field Reports本体</h2>
+<p>本モジュールのご利用に際しては，Field Reports本体が導入済みである必要があります。</p>
+<p>Field Reportsのご購入もしくは試用版のダウンロードにつきましては， 下記サイトをご参照ください。</p>
+<p><a href="https://www.field-works.co.jp/">https://www.field-works.co.jp/</a>製品情報/</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+連携手段の選択</h2>
+<p>本モジュールとField Reports本体との連携方法として，以下の２種類があります。 システム構成に応じて，適切な連携方法を選択してください。</p>
+<ul>
+<li>コマンド呼び出しによる連携<ul>
+<li>reports本体と本モジュールを同一マシンに配置する必要があります。</li>
+<li>パスが通る場所にreportsコマンドを置くか，reportsコマンドのパスをAPIに渡してください。</li>
+</ul>
+</li>
+<li>HTTP通信による連携<ul>
+<li>Field Reports本体をリモートマシンに配置することができます。</li>
+<li>Field Reportsは，サーバーモードで常駐起動させてください（<code>reports server</code>）。</li>
+<li>サーバーモードで使用するポート番号（既定値：<code>50080</code>）の通信を許可してください。</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Java処理系</h2>
+<ul>
+<li>Java SE 8以上</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+インストール</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+jarファイルによるインストール</h2>
+<p>インストール媒体より，jarファイルを所定の格納場所にコピーしてください。 </p><pre class="fragment">field_reports-x.x.x.jar
+</pre><p>jarファイルの格納場所は，環境変数'CLASSPATH'または実行時引数'-classpath'で指定してください。</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Mavenプロジェクトからの利用</h2>
+<p>Mavenから参照可能なインストールモジュールをGitHubで配布しています。</p>
+<p>プロジェクトから利用する際には，<code>pos.xml</code>ファイルに下記の記述を追加してください。</p>
+<div class="fragment"><div class="line">{xml:pom.xml} </div>
+<div class="line">  &lt;dependencies&gt;</div>
+<div class="line">    &lt;dependency&gt;</div>
+<div class="line">        &lt;groupId&gt;jp.co.field_works&lt;/groupId&gt;</div>
+<div class="line">        &lt;artifactId&gt;field_reports&lt;/artifactId&gt;</div>
+<div class="line">        &lt;version&gt;2.0.0&lt;/version&gt;</div>
+<div class="line">    &lt;/dependency&gt;</div>
+<div class="line">  &lt;/dependencies&gt;</div>
+<div class="line"> </div>
+<div class="line">  &lt;repositories&gt;</div>
+<div class="line">    &lt;repository&gt;</div>
+<div class="line">      &lt;id&gt;github&lt;/id&gt;</div>
+<div class="line">      &lt;url&gt;https://raw.githubusercontent.com/field-works/jvm-bridge/repo/&lt;/url&gt;</div>
+<div class="line">    &lt;/repository&gt;</div>
+<div class="line">  &lt;/repositories&gt;</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+動作確認</h2>
+<h2><a class="anchor" id="autotoc_md8"></a>
+コマンド連携時</h2>
+<p>以下のコマンドを実行してください。</p>
+<div class="fragment"><div class="line">$ jshell --class-path &lt;jarファイル格納場所&gt;/field_reports-2.0.0.jar</div>
+<div class="line">jshell&gt; import jp.co.field_works.field_reports.*</div>
+<div class="line">jshell&gt; jp.co.field_works.field_reports.Proxy reports = Bridge.createProxy(&quot;exec:/usr/local/bin/reports&quot;)</div>
+<div class="line">jshell&gt; reports.version()</div>
+<div class="line">$3 ==&gt; &quot;2.0.0&quot;</div>
+<div class="line">jshell&gt; reports.render(&quot;{}&quot;)</div>
+<div class="line">$4 ==&gt; byte[672] { 37, 80, 68, 70, 45, 49,...</div>
+</div><!-- fragment --><ul>
+<li>動作環境に応じて，create_proxy()に与えるパスを適宜変更してください。 <br  />
+ （Windowsでは，"exec:C:/Program Files/Field Works/Field Reports x.x/bin/reports.exe"など）</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+HTTP通携時</h2>
+<p>Field Reportsをサーバーモードで起動してください。</p>
+<div class="fragment"><div class="line">$ reports server -l3</div>
+</div><!-- fragment --><p>次に，以下のコマンドを実行してください</p>
+<div class="fragment"><div class="line">$ jshell --class-path &lt;jarファイル格納場所&gt;/field_reports-2.0.0.jar</div>
+<div class="line">jshell&gt; import jp.co.field_works.field_reports.*</div>
+<div class="line">jshell&gt; jp.co.field_works.field_reports.Proxy reports = Bridge.createProxy(&quot;http://localhost:50080/&quot;)</div>
+<div class="line">jshell&gt; reports.version()</div>
+<div class="line">$3 ==&gt; &quot;2.0.0&quot;</div>
+<div class="line">jshell&gt; reports.render(&quot;{}&quot;)</div>
+<div class="line">$4 ==&gt; byte[672] { 37, 80, 68, 70, 45, 49,...</div>
+</div><!-- fragment --><ul>
+<li>動作環境に応じて，create_proxy()に与えるURLを適宜変更してください。 <br  />
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+API使用例</h1>
+<div class="fragment"><div class="line"><span class="keyword">import</span> jp.co.field_works.field_reports.*;</div>
+<div class="line"> </div>
+<div class="line">Proxy reports = Bridge.createProxy(<span class="stringliteral">&quot;http://localhost:50080/&quot;</span>);</div>
+<div class="line">String param = <span class="stringliteral">&quot;{\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;   \&quot;template\&quot;: {\&quot;paper\&quot;: \&quot;A4\&quot;},\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;   \&quot;context\&quot;: {\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;       \&quot;hello\&quot;: {\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;           \&quot;new\&quot;: \&quot;Tx\&quot;,\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;           \&quot;value\&quot;: \&quot;Hello, World!\&quot;,\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;           \&quot;rect\&quot;: [100, 700, 400, 750]\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;       }\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;   }\n&quot;</span> +</div>
+<div class="line"><span class="stringliteral">&quot;}\n&quot;</span>;</div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keywordtype">byte</span>[] pdf = reports.render(param);</div>
+<div class="line"> </div>
+<div class="line">} <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line">    e.printStackTrace();</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+ライセンス</h1>
+<p>本モジュールのソースコードは，BSDライセンスのオープンソースとします。 </p><pre class="fragment">https://github.com/field-works/jvm-bridge/
+</pre><p>以下のような場合，自由に改変／再配布していただいて結構です。</p>
+<ul>
+<li>独自機能の追加</li>
+<li>ビルド/実行環境等の違いにより，本モジュールが正常に機能しない。</li>
+<li>未サポートのJavaバージョンへの対応のため改造が必要。</li>
+<li>他の言語の拡張ライブラリ作成のベースとして利用したい。</li>
+</ul>
+<p>ただし，ソースを改変したモジュール自体において問題が発生し場合については， サポート対応いたしかねますのでご了承ください （Field Reports本体もしくはオリジナルの本モジュールに起因する問題であれば対応いたします）。</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+著者</h1>
+<ul>
+<li>合同会社フィールドワークス / Field Works, LLC</li>
+<li><a href="https://www.field-works.co.jp/">https://www.field-works.co.jp/</a></li>
+<li><a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'fi'+'eld'+'-w'+'ork'+'s.'+'co.'+'jp'; return false;">suppo<span style="display: none;">.nosp@m.</span>rt@f<span style="display: none;">.nosp@m.</span>ield-<span style="display: none;">.nosp@m.</span>work<span style="display: none;">.nosp@m.</span>s.co.<span style="display: none;">.nosp@m.</span>jp</a> </li>
+</ul>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">構築:
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
